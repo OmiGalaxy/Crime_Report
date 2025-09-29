@@ -74,7 +74,7 @@ export default function AdminAnalyticsPage() {
     return null
   }
 
-  const [complaints, setComplaints] = useState([])
+  const [complaints, setComplaints] = useState<any[]>([])
   const [userStats, setUserStats] = useState({
     totalUsers: 0,
     activeUsers: 0,
