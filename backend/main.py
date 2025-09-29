@@ -20,6 +20,20 @@ from schemas import (
 
 app = FastAPI(title="Crime Report Management API", version="1.0.0")
 
+@app.get("/")
+def root():
+    return {
+        "message": "Crime Report Management API",
+        "version": "1.0.0",
+        "status": "running",
+        "docs": "/docs",
+        "endpoints": {
+            "auth": "/auth/login",
+            "complaints": "/complaints/",
+            "users": "/users/profile"
+        }
+    }
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
