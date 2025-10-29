@@ -38,23 +38,28 @@ CrimeR/
 ### Backend Setup
 ```bash
 cd backend
+python -m venv venv
+venv\Scripts\activate  # Windows
+# source venv/bin/activate  # Linux/Mac
 pip install -r requirements.txt
 python init_db.py
-uvicorn main:app --reload
+python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ### Frontend Setup
 ```bash
 cd frontend
 npm install
+cp ../.env.example .env.local
 npm run dev
 ```
 
-## Default Users
+## Demo Login Credentials
 
 After running `init_db.py`:
-- **Admin**: admin@crime.gov / admin123
-- **User**: user@example.com / user123
+- **Admin**: admin@crimewatch.com / password123
+- **Police**: officer@police.gov / password123
+- **User**: citizen@email.com / password123
 
 ## API Endpoints
 
